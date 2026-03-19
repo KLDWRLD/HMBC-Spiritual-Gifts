@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- PROGRESS BAR -->
+<div style="width: 100%; background: #eee; height: 12px; border-radius: 6px; margin-bottom: 20px;">
+    <div style="
+        width: {{ ((q_number / total) * 100) | round(0) ~ '%' }};
+        background: #4CAF50;
+        height: 100%;
+        border-radius: 6px;">
+    </div>
+</div>
+
+<p><strong>Question {{ q_number }} of {{ total }}</strong></p>
+
+<div class="center">
+    <h2>Question {{ q_number }} of {{ total }}</h2>
+    <p>{{ question }}</p>
+
+    <form method="post">
+        <button type="submit" name="value" value="1">1</button>
+        <button type="submit" name="value" value="2">2</button>
+        <button type="submit" name="value" value="3">3</button>
+    </form>
+</div>
+
+{% endblock %}
+

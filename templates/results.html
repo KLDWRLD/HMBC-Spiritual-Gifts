@@ -1,0 +1,18 @@
+{% block content %}
+
+<h1>Your Results</h1>
+
+{% for r in results %}
+    <div class="gift-card">
+        <h2>{{ r.letter }} — {{ r.word }} (Score: {{ r.score }})</h2>
+
+        {% if r.details %}
+            <p><strong>Definition:</strong> {{ r.details.definition }}</p>
+            <p><strong>Scripture:</strong> {{ r.details.verses }}</p>
+            <p><strong>Ministry Fit:</strong> {{ r.details.applications }}</p>
+        {% endif %}
+    </div>
+{% endfor %}
+
+{% endblock %}
+
