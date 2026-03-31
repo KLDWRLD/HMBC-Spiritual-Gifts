@@ -4,7 +4,15 @@ import os
 from datetime import datetime
 
 app = Flask(__name__)
-app.secret_key = "change-this-key"
+app.config["SESSION_COOKIE_SECURE"] = True
+app.config["SESSION_COOKIE_SAMESITE"] = "None"
+import os
+
+app.secret_key = os.environ.get(
+    "SECRET_KEY",
+    "d179ba368c2ec442c78692b295924d1e6f27f84315435893b508a4a07ca9a16d"
+)
+
 
 # -----------------------------
 # WELCOME PAGE
